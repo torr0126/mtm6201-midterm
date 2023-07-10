@@ -1,0 +1,237 @@
+/*------------------------------------------------------------
+Project:        Mid Term Project - 23S_MTM6201_010 Web Development II - Interactive Media Design
+Version:        1.0
+Author:         Monica Torres
+Primary use:    Academic Purposes
+Contact:        torr0126@algonquincollege.com
+
+Content
+1. General
+	1.1 Grid Definition
+2. Header 
+    2.1 Navigation
+3. Main Content
+4. Footer
+5. Media Queries
+
+Colors:
+			White Smoke: #F3F5F4
+			Olivine: #B0C18B
+			peach Yellow: #F7DC99
+			Fire Brick: #BB3127
+			Burgundy: #741B21
+			Raisin Black: #212129
+
+
+Fonts:
+            font-family: 'Lobster', cursive;
+			font-family: 'Poppins', sans-serif;
+
+------------------------------------------------------------*/
+
+/*
+*			1. General
+------------------------------------------------------------*/
+* {
+	box-sizing: border-box;
+}
+
+body {
+	/*background-color: #B0C18B;*/
+    font-family: 'Poppins', sans-serif;
+	min-height: 100vh;
+  	display: grid;
+  	grid-template-rows: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lobster', cursive;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	padding: 0.5rem;
+
+}
+
+a, a:active, a:hover, a:visited  {
+	color: #741B21;
+	text-decoration: none;
+}
+
+p {
+	font-family: 'Poppins', sans-serif;
+}
+
+
+
+/*
+*			1.1. Grid Definition
+------------------------------------------------------------*/
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(3, auto);
+	gap: 1rem;
+}
+
+/* .products {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+  }
+  
+  .product-img img {
+	width: 100%;
+	height: auto;
+  } */
+  
+
+/*
+*			2.1. Navigation
+------------------------------------------------------------*/
+/* .show-inline {
+	display: flex;
+	/* justify-content: space-between;
+} */
+
+.show-inline li {
+    display: inline-block;
+	justify-content: space-between;
+	padding: .5rem .5rem;
+	margin: 0;
+}
+
+.show-inline a {
+    text-decoration: none;
+}
+
+li {
+	background-color: #F7DC99;
+	border-radius:3rem;
+}
+
+li a {
+	color:#741B21;
+	padding: 1.5rem;
+}
+
+
+/*
+*			3. Main Content
+------------------------------------------------------------*/
+
+.contact-form {
+	max-width: 400px;
+	margin: 0 auto;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+  }
+
+  .contact-form button {
+	padding: 10px 20px;
+	background-color: #741B21;
+	color: white;
+	border: none;
+	cursor: pointer;
+  }
+
+  .contact-form button:hover {
+	background-color: #BB3127;
+  }
+
+/*
+*			 4. Footer
+------------------------------------------------------------*/
+.footer {
+	color: #F7DC99;
+	background-color: #741B21;
+}
+
+
+
+/*
+*			 5. Media Queries
+------------------------------------------------------------*/
+@media screen and (min-width: 640px) {
+	.header{
+		grid-area: header;
+		padding: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		align-self: flex-end;
+	}
+
+	.main{
+		grid-area: main;
+		padding: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.footer{
+		grid-area: footer;
+		padding: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* align-self: flex-end; */
+	}
+
+	.wrapper {
+		grid-template-areas: 
+		'main'
+		'header'
+		'footer';
+	}
+}
+
+@media screen and (max-width: 639px) {
+	
+	.header{
+		grid-area: header;
+		padding: 1rem;
+		display: flex;
+		align-content: space-evenly;
+	}
+
+	.main{
+		grid-area: main;
+		padding: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+	} 	
+
+	.footer{
+		grid-area: footer;
+		padding: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		/* align-self: flex-end; */
+	}
+
+	/* .main .products {
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	} */
+
+	.wrapper {
+		grid-template-areas: 
+		'header'
+		'main'
+		'footer';
+	}
+}
