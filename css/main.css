@@ -29,6 +29,8 @@ Fonts:
             font-family: 'Lobster', cursive;
 			font-family: 'Poppins', sans-serif;
 
+Images: All images used are from   https://www.pexels.com
+   
 ------------------------------------------------------------*/
 
 /*
@@ -57,12 +59,20 @@ h2, h3, h4, h5, h6 {
 	font-family: 'Lobster', cursive;
 }
 
-img {
+.logo{
+	display: flex;
 	max-width: 100%;
 	height: auto;
 	padding: 0.5rem;
-
+	margin: 0 auto;
 }
+
+/*img {
+	max-width: 100%;
+	height: auto;
+	padding: 0.5rem;*/
+
+
 
 a, a:active, a:hover, a:visited  {
 	color: #741B21;
@@ -110,17 +120,17 @@ p {
     display: inline-block;
 	justify-content: space-between;
 	padding: .5rem .5rem;
-	margin: 0;
 }
 
 .show-inline a {
-    text-decoration: none;
+   	text-decoration: none;
+	padding: 50px;
 }
 
 li {
 	background-color: #F7DC99;
 	border-radius:3rem;
-	}
+}
 
 li a {
 	color:#741B21;
