@@ -11,6 +11,8 @@ Content
 2. Header 
     2.1 Navigation
 3. Main Content
+	3.1 Contact Form
+	3.2 Cake Galley
 4. Footer
 5. Media Queries
 
@@ -36,15 +38,22 @@ Fonts:
 	box-sizing: border-box;
 }
 
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
 body {
-	/*background-color: #B0C18B;*/
     font-family: 'Poppins', sans-serif;
 	min-height: 100vh;
   	display: grid;
   	grid-template-rows: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
+
+
+h2, h3, h4, h5, h6 {
 	font-family: 'Lobster', cursive;
 }
 
@@ -71,6 +80,10 @@ p {
 ------------------------------------------------------------*/
 
 .wrapper {
+	background-image:url(../images/background-1.jpg) ;
+	background-repeat:no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(3, auto);
@@ -92,10 +105,6 @@ p {
 /*
 *			2.1. Navigation
 ------------------------------------------------------------*/
-/* .show-inline {
-	display: flex;
-	/* justify-content: space-between;
-} */
 
 .show-inline li {
     display: inline-block;
@@ -111,7 +120,7 @@ p {
 li {
 	background-color: #F7DC99;
 	border-radius:3rem;
-}
+	}
 
 li a {
 	color:#741B21;
@@ -123,36 +132,76 @@ li a {
 *			3. Main Content
 ------------------------------------------------------------*/
 
+/*
+*			3.1 Contact Form
+------------------------------------------------------------*/
+
 .contact-form {
 	max-width: 400px;
 	margin: 0 auto;
   }
 
-  .contact-form input,
-  .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
 	width: 100%;
 	padding: 10px;
 	margin-bottom: 10px;
-  }
+}
 
-  .contact-form button {
+.contact-form button {
 	padding: 10px 20px;
 	background-color: #741B21;
 	color: white;
 	border: none;
 	cursor: pointer;
-  }
+}
 
-  .contact-form button:hover {
+.contact-form button:hover {
 	background-color: #BB3127;
+}
+
+/*
+*			3.2 Cake Galley
+------------------------------------------------------------*/
+div.cake {
+	border: 1px solid #ccc;
+}
+
+div.cake:hover {
+	border: 1px solid #777;
+	transform: translateY(-10px);
+}
+  
+div.cake img {
+	width: 100%;
+	height: auto;
+}
+
+div.description {
+	padding: 15px;
+	text-align: center;
   }
 
+  .cake-container {
+	padding: 0 6px;
+	float: left;
+	width: 24.99999%;
+} 
 /*
 *			 4. Footer
 ------------------------------------------------------------*/
 .footer {
 	color: #F7DC99;
 	background-color: #741B21;
+	padding-top: 2rem;
+}
+
+.social i{
+	font-size: 3rem;
+	display: inline-block;
+	justify-content: space-between;
+	padding: .5rem .5rem;
+	margin: 0;
 }
 
 
@@ -173,20 +222,20 @@ li a {
 
 	.main{
 		grid-area: main;
-		padding: 1rem;
+		padding: 3rem;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
 		align-items: center;
+		justify-content: space-evenly;
 	}
 
 	.footer{
 		grid-area: footer;
 		padding: 1rem;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
 		align-items: center;
-		/* align-self: flex-end; */
+		align-self: center;
 	}
 
 	.wrapper {
@@ -203,9 +252,11 @@ li a {
 		grid-area: header;
 		padding: 1rem;
 		display: flex;
-		align-content: space-evenly;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
 	}
-
+	
 	.main{
 		grid-area: main;
 		padding: 1rem;
@@ -219,10 +270,12 @@ li a {
 		grid-area: footer;
 		padding: 1rem;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		/* align-self: flex-end; */
-	}
+		align-self: center;
+	
+		}
 
 	/* .main .products {
 		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -230,8 +283,21 @@ li a {
 
 	.wrapper {
 		grid-template-areas: 
-		'header'
 		'main'
+		'header'
 		'footer';
+		background-image: url(../images/background-2.jpg);
 	}
+
+	.cake-container {
+		width: 49.99999%;
+		margin: 6px 0;
+	  }
 }
+
+@media only screen and (max-width: 420px) {
+
+	.cake-container {
+	  width: 100%;
+	}
+  }
